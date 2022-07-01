@@ -1,0 +1,100 @@
+import MovieCard from "./components/MovieCard";
+import data from "./data";
+
+function App() {
+  const items = data;
+  return (
+    <div className="App">
+      <header> 
+        <h1>Movies</h1>
+      </header>
+      <div className="movie-grid">
+        {items.map((item) => (
+          <MovieCard key={item.id} movie={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+import img1 from './assets/img1.jpg';
+import img2 from './assets/img2.jpg';
+import img3 from './assets/img3.jpg';
+import img4 from './assets/img4.jpg';
+import img5 from './assets/img5.jpg';
+import img6 from './assets/img6.jpg';
+
+const data=[
+    {
+        name:'Avengers 5',
+        id:0,
+        imgSrc:img1,
+    },
+    {
+        name:'Avengers-End Game',
+        id:1,
+        imgSrc:img2,
+    },
+    {
+        name:'Avengers-Infinity War',
+        id:2,
+        imgSrc:img3,
+    },  {
+        name:'Avengers-Age of Ultron',
+        id:3,
+        imgSrc:img4,
+    },
+    {
+        name:'Avengers-The Assemble',
+        id:4,
+        imgSrc:img5,
+    },
+    {
+        name:'Avengers 2021',
+        id:5,
+        imgSrc:img6,
+    }
+];
+
+export default data;
+
+body{
+  text-align: center;
+  color:white;
+  background-color: black;
+}
+h1{
+  font-size: 5rem;
+}
+
+.img{
+  max-width: 15rem;
+  max-height: 20rem;
+  border: 1px solid gray;
+
+}
+.movie-grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2rem;
+  margin-top:5
+}
+
+.movie-name{
+  font-size: 2rem;
+  padding:1rem;
+}
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
